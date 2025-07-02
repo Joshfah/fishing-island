@@ -16,10 +16,10 @@ public partial class Player : CharacterBody2D
     {
         base._PhysicsProcess(delta);
 
-        GetInput();
+        HandleMovement();
     }
 
-    public void GetInput()
+    public void HandleMovement()
     {
         Vector2 inputDirection = Input.GetVector("A", "D", "W", "S");
         Velocity = inputDirection.Normalized() * speed;

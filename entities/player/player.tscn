@@ -1,13 +1,13 @@
 [gd_scene load_steps=8 format=3 uid="uid://1ggignyufcea"]
 
 [ext_resource type="Script" uid="uid://b5gjykd2nluty" path="res://entities/player/Player.cs" id="1_abrql"]
-[ext_resource type="Texture2D" uid="uid://bjwkfcman18x" path="res://icon.svg" id="2_sglur"]
+[ext_resource type="Texture2D" uid="uid://cgag72xuknglu" path="res://assets/player-placeholder.png" id="2_fkugw"]
 [ext_resource type="Script" uid="uid://bd046eokvcnu2" path="res://addons/phantom_camera/scripts/phantom_camera_host/phantom_camera_host.gd" id="3_fkugw"]
 [ext_resource type="Script" uid="uid://bhexx6mj1xv3q" path="res://addons/phantom_camera/scripts/phantom_camera/phantom_camera_2d.gd" id="4_8fjmc"]
 [ext_resource type="Script" uid="uid://8umksf8e80fw" path="res://addons/phantom_camera/scripts/resources/tween_resource.gd" id="5_qiwj3"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_bls4j"]
-size = Vector2(123, 124)
+size = Vector2(8, 6)
 
 [sub_resource type="Resource" id="Resource_26q78"]
 script = ExtResource("5_qiwj3")
@@ -17,14 +17,15 @@ script = ExtResource("1_abrql")
 speed = 100
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("2_sglur")
+texture = ExtResource("2_fkugw")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0.5, 0)
+position = Vector2(0, 7)
 shape = SubResource("RectangleShape2D_bls4j")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 physics_interpolation_mode = 1
+process_callback = 0
 
 [node name="PhantomCameraHost" type="Node" parent="Camera2D"]
 process_priority = 300
